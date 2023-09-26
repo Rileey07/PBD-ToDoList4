@@ -70,7 +70,7 @@ namespace Repository {
         function findAll(): array
         {
            // return $this->todolist;
-            $sql = "SELECT id, name FROM todolist";
+            $sql = "SELECT id, todo FROM todolist";
             $statement = $this->connection->prepare(sql);
             $statement->execute();
 
