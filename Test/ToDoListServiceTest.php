@@ -11,7 +11,7 @@ use Repository\TodolistRepositoryImpl;
 
 function testShowTodolist(): void
 {
-    $connection = \Config\Database::getConnection();
+    $connection = \config\Database::getConnection();
     $todolistRepository = new TodolistRepositoryImpl($connection);
     $todolistService = new TodolistServiceImpl($todolistRepository);
     $todolistService->addTodolist("Belajar PHP");
