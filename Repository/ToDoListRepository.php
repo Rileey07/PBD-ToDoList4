@@ -33,7 +33,7 @@ namespace Repository {
             //$this->todolist[$number] = $todolist;
 
             $sql = "INSERT INTO todolist(todo) VALUES (?)";
-            $statement = $this->connection->prepare(sql);
+            $statement = $this->connection->prepare($sql);
             $statement->execute([$todolist->getTodo()]);
         }
 
@@ -58,7 +58,7 @@ namespace Repository {
             if($statement->fetch()){
                 // todolist ada
             $sql = "DELETE FROM todolist WHERE id = ?";
-            $statement = $this->connection->prepare(sql);
+            $statement = $this->connection->prepare($sql);
             $statement->execute([$number]);
             return true;
             }else{
@@ -71,7 +71,7 @@ namespace Repository {
         {
            // return $this->todolist;
             $sql = "SELECT id, todo FROM todolist";
-            $statement = $this->connection->prepare(sql);
+            $statement = $this->connection->prepare($sql);
             $statement->execute();
 
             $result = [];
